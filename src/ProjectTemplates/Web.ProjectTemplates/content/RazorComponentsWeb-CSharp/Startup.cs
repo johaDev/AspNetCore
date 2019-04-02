@@ -23,7 +23,7 @@ namespace RazorComponentsWeb_CSharp
             services.AddRazorPages()
                 .AddNewtonsoftJson();
 
-            services.AddRazorComponents();
+            services.AddServerSideBlazor();
 
             services.AddSingleton<WeatherForecastService>();
         }
@@ -53,7 +53,7 @@ namespace RazorComponentsWeb_CSharp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapComponentHub();
+                endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/Host");
             });
         }
